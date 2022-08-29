@@ -5,4 +5,4 @@ select ID,
        ( AMOUNT / 100 ) as amount,
        CREATED,
        _BATCHED_AT
-from raw.stripe.payment
+from {{ source('stripe', 'payment') }}
